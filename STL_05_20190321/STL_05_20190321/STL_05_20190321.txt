@@ -1,0 +1,6665 @@
+
+
+==================
+Thu Mar 21 13:36:57 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+int main()
+{
+	// 호출 가능한 타입
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	double (*f1)(double) = sin;
+	cout << typeid(f1).name() << endl;
+	// 2. 람다
+	auto f2 = []() {};
+	// 3. 함수객체
+	// 4. 멤버 함수
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 13:37:00 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+int main()
+{
+	// 호출 가능한 타입
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	double (*f1)(double) = sin;
+	cout << typeid(f1).name() << endl;
+	// 2. 람다
+	auto f2 = []() {};
+	// 3. 함수객체
+	// 4. 멤버 함수
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 13:40:20 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+class Dog {
+public:
+	void operator()() {}
+
+	void jump() {}
+};
+
+int main()
+{
+	// 호출 가능한 타입
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	double (*f1)(double) = sin;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다
+	auto f2 = []() {};
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 13:40:56 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+class Dog {
+public:
+	void operator()() {}
+
+	void jump() {}
+};
+
+int main()
+{
+	// 호출 가능한 타입
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	double (*f1)(double) = sin;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다
+	auto f2 = []() {};
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog dog;
+	dog.jump();
+	auto f4 = &Dog::jump;
+	cout << typeid(f4).name() << endl;
+
+	// 4. 멤버 함수
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 13:42:00 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+class Dog {
+public:
+	void operator()() {}
+
+	void jump() {}
+};
+
+int main()
+{
+	// 호출 가능한 타입
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	double (*f1)(double) = sin;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다
+	auto f2 = []() {};
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog dog;
+	dog.jump();
+	//auto f4 = &Dog::jump;
+	void (Dog::*f4)(void) = &Dog::jump;
+	cout << typeid(f4).name() << endl;
+
+	// 4. 멤버 함수
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 13:46:59 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+class Dog {
+public:
+	void operator()() {}
+
+	void jump() {}
+};
+
+int main()
+{
+	// 호출 가능한 타입 ======================================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	double (*f1)(double) = sin;
+	cout << f1(0) << endl;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다
+	auto f2 = []() {};
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	Dog* pd = new Dog;
+	void (Dog::*f4)(void) = &Dog::jump;
+	(pd->*f4)(); // jump함수 호출
+	// ==================== 복습 ==============================
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 13:58:47 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include "save.h"
+using namespace std;
+
+class Dog {
+public:
+	void operator()() {}
+
+	void jump() {}
+};
+
+void f() {} // 함수는 반드시 전역에서 만들어야함
+int main()
+{
+	// 호출 가능한 타입 ======================================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+	// function<double(double)> f1 = sin;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog d;
+	// function<void(void)> f4 = &Dog::jump;
+
+	// ==================== 복습 ==============================
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:04:46 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include "save.h"
+using namespace std;
+
+class Dog {
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ======================================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+
+	// ==================== 복습 ==============================
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:05:18 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include "save.h"
+using namespace std;
+
+class Dog {
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ======================================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 ==============================
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:20:42 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+	// uniform_int_distribution<> uidChar('a', 'z');
+	char *p;
+public:
+	String(int n) 
+	{
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			p[i] = (uid(dre) % 26) + 97;
+		}
+	}
+	~String() { delete[] p; }
+};
+
+ostream& operator<<(ostream os, const String& a)
+{
+	cout << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:21:00 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+	// uniform_int_distribution<> uidChar('a', 'z');
+	char *p;
+public:
+	String(int n) 
+	{
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			p[i] = (uid(dre) % 26) + 97;
+		}
+	}
+	~String() { delete[] p; }
+};
+
+ostream& operator<<(ostream os, const String& a)
+{
+	cout << a.p[0];
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:24:46 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	default_random_engine dre;
+	// uniform_int_distribution<> uid;
+	uniform_int_distribution<> uidChar('a', 'z');
+	char *p;
+public:
+	String(int n) 
+	{
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			p[i] = (uidChar(dre) % 26) + 97;
+		}
+	}
+	~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream os, const String& a);
+};
+
+ostream& operator<<(ostream os, const String& a)
+{
+	cout << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:25:11 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	default_random_engine dre;
+	//uniform_int_distribution<> uid;
+	uniform_int_distribution<> uid('a', 'z');
+	char *p;
+public:
+	String(int n) 
+	{
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			//p[i] = (uid(dre) % 26) + 97;
+			p[i] = (uid(dre);
+		}
+	}
+	~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream os, const String& a);
+};
+
+ostream& operator<<(ostream os, const String& a)
+{
+	cout << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:25:19 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	default_random_engine dre;
+	//uniform_int_distribution<> uid;
+	uniform_int_distribution<> uid('a', 'z');
+	char *p;
+public:
+	String(int n) 
+	{
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			//p[i] = (uid(dre) % 26) + 97;
+			p[i] = uid(dre;
+		}
+	}
+	~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream os, const String& a);
+};
+
+ostream& operator<<(ostream os, const String& a)
+{
+	cout << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:25:33 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	default_random_engine dre;
+	//uniform_int_distribution<> uid;
+	uniform_int_distribution<> uid('a', 'z');
+	char *p;
+public:
+	String(int n) 
+	{
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			//p[i] = (uid(dre) % 26) + 97;
+			p[i] = uid(dre);
+		}
+	}
+	~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream os, const String& a);
+};
+
+ostream& operator<<(ostream os, const String& a)
+{
+	cout << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:26:13 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	char *p;
+public:
+	String(int n) 
+	{
+		default_random_engine dre;
+		uniform_int_distribution<> uid('a', 'z');
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			//p[i] = (uid(dre) % 26) + 97;
+			p[i] = uid(dre);
+		}
+	}
+	~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream os, const String& a);
+};
+
+ostream& operator<<(ostream os, const String& a)
+{
+	cout << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:26:28 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	char *p;
+public:
+	String(int n) 
+	{
+		default_random_engine dre;
+		uniform_int_distribution<> uid('a', 'z');
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			//p[i] = (uid(dre) % 26) + 97;
+			p[i] = uid(dre);
+		}
+	}
+	~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream os, const String& a);
+};
+
+ostream& operator<<(ostream os, const String& a)
+{
+	cout << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:29:56 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	char *p;
+public:
+	String(int n) 
+	{
+		default_random_engine dre;
+		uniform_int_distribution<> uid('a', 'z');
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	//~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& a)
+{
+	os << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:30:12 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	char *p;
+public:
+	String(int n) 
+	{
+		default_random_engine dre;
+		uniform_int_distribution<> uid('a', 'z');
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			p[i] = uid(dre);
+		}
+		p[n] = NULL;
+	}
+	//~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& a)
+{
+	os << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:31:59 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	char *p;
+public:
+	String(int n) 
+	{
+		default_random_engine dre;
+		uniform_int_distribution<> uid('a', 'z');
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			p[i] = uid(dre);
+		}
+		p[n] = NULL;
+	}
+	~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& a)
+{
+	os << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:32:15 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+class String {
+	char *p;
+public:
+	String(int n) 
+	{
+		default_random_engine dre;
+		uniform_int_distribution<> uid('a', 'z');
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			p[i] = uid(dre);
+		}
+		p[n] = NULL;
+	}
+	//~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& a)
+{
+	os << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:33:24 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+class String {
+	char *p;
+public:
+	String(int n) 
+	{
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			p[i] = uid(dre);
+		}
+		p[n] = NULL;
+	}
+	~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& a)
+{
+	os << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:35:16 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+class String {
+	int size = 0;
+	char *p;
+public:
+	String(int n) 
+	{
+		p = new char[n]; 
+		for (int i = 0; i < n; ++i)
+		{
+			p[i] = uid(dre);
+		}
+		p[n] = NULL;
+		size = n;
+	}
+	~String() { if (size != 0) delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& a)
+{
+	os << a.p;
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:37:01 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+class String {
+	int num = 0;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+		p[num] = NULL;
+	}
+	//~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	//os << str.p;
+	//return os;
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:37:17 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+class String {
+	int num = 0;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+		//p[num] = NULL;
+	}
+	//~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	//os << str.p;
+	//return os;
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:37:27 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+class String {
+	int num = 0;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+		//p[num] = NULL;
+	}
+	//~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	//os << str.p;
+	//return os;
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:37:51 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+class String {
+	int num;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+		//p[num] = NULL;
+	}
+	//~String() { delete[] p; }
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	//os << str.p;
+	//return os;
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:40:15 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+class String {
+	int num;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:40:17 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+class String {
+	int num;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:40:21 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+class String {
+	int num;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:40:24 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+class String {
+	int num;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:42:05 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+class String {
+	int num;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a;
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	
+	cout << b << endl;
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:50:13 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+class String {
+	int num;
+	char *p;
+public:
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	
+	cout << b << endl;
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:54:15 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num;
+	char *p;
+public:
+	String() {}
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String strings[100];
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	
+	cout << b << endl;
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:54:25 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num;
+	char *p;
+public:
+	String() { p = NULL; }
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String strings[100];
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	
+	cout << b << endl;
+
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:55:18 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num;
+	char *p;
+public:
+	String() { p = NULL; }
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String strings[100];
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	
+	cout << b << endl;
+
+	// string을 임의의 길이로 설정하라
+
+	// 길이 오름차순으로 정렬하라
+	
+	// 출력하라
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 14:55:23 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num;
+	char *p;
+public:
+	String() { p = NULL; }
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uid(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String strings[100000];
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	
+	cout << b << endl;
+
+	// string을 임의의 길이로 설정하라
+
+	// 길이 오름차순으로 정렬하라
+	
+	// 출력하라
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:01:08 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid(0, 100);
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void SetChar(int n)
+	{
+		num = n;
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+
+	for (int i = 0; i < 100; ++i)
+	{
+		strings[i].SetChar(uid(dre));
+	}
+	// 길이 오름차순으로 정렬하라
+	
+	// 출력하라
+	for (int i = 0; i < 100; ++i)
+	{
+		cout << strings[i] << endl;
+	}
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:01:23 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid(1, 100);
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void SetChar(int n)
+	{
+		num = n;
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+
+	for (int i = 0; i < 100; ++i)
+	{
+		strings[i].SetChar(uid(dre));
+	}
+	// 길이 오름차순으로 정렬하라
+	
+	// 출력하라
+	for (int i = 0; i < 100; ++i)
+	{
+		cout << strings[i] << endl;
+	}
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:05:00 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid(1, 100);
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void SetChar(int n)
+	{
+		num = n;
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = 0; j < num; ++j)
+		{
+			if (str[i].GetNum() > str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+
+	for (int i = 0; i < 100; ++i)
+	{
+		strings[i].SetChar(uid(dre));
+	}
+	// 길이 오름차순으로 정렬하라
+	SortStrings(strings, 100);
+	// 출력하라
+	for (int i = 0; i < 100; ++i)
+	{
+		cout << strings[i] << endl;
+	}
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:05:10 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uid(1, 100);
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void SetChar(int n)
+	{
+		num = n;
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = 0; j < num; ++j)
+		{
+			if (str[i].GetNum() < str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+
+	for (int i = 0; i < 100; ++i)
+	{
+		strings[i].SetChar(uid(dre));
+	}
+	// 길이 오름차순으로 정렬하라
+	SortStrings(strings, 100);
+	// 출력하라
+	for (int i = 0; i < 100; ++i)
+	{
+		cout << strings[i] << endl;
+	}
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:06:05 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void SetChar(int n)
+	{
+		num = n;
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = 0; j < num; ++j)
+		{
+			if (str[i].GetNum() < str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uid(10, 1000);
+
+	for (int i = 0; i < 100; ++i)
+	{
+		strings[i].SetChar(uid(dre));
+	}
+	// 길이 오름차순으로 정렬하라
+	SortStrings(strings, 100);
+	// 출력하라
+	for (int i = 0; i < 100; ++i)
+	{
+		cout << strings[i] << endl;
+	}
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:06:10 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void SetChar(int n)
+	{
+		num = n;
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = 0; j < num; ++j)
+		{
+			if (str[i].GetNum() < str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uid(10, 70);
+
+	for (int i = 0; i < 100; ++i)
+	{
+		strings[i].SetChar(uid(dre));
+	}
+	// 길이 오름차순으로 정렬하라
+	SortStrings(strings, 100);
+	// 출력하라
+	for (int i = 0; i < 100; ++i)
+	{
+		cout << strings[i] << endl;
+	}
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:08:28 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void set(int n)
+	{
+		num = n;
+		if (!p) // 이미 생성되어있기 때문에 예외처리
+		{
+			delete[] p;
+		}
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = i; j < num; ++j)
+		{
+			if (str[i].GetNum() < str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uidNum(10, 70);
+	for (String& d : strings)
+		d.set(uidNum(dre));
+
+	// 길이 오름차순으로 정렬하라
+	SortStrings(strings, 100);
+	// 출력하라
+	for (int i = 0; i < 100; ++i)
+	{
+		cout << strings[i] << endl;
+	}
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:08:37 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void set(int n)
+	{
+		num = n;
+		if (!p) // 이미 생성되어있기 때문에 예외처리
+		{
+			delete[] p;
+		}
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = i; j < num; ++j)
+		{
+			if (str[i].GetNum() > str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uidNum(10, 70);
+	for (String& d : strings)
+		d.set(uidNum(dre));
+
+	// 길이 오름차순으로 정렬하라
+	SortStrings(strings, 100);
+	// 출력하라
+	for (int i = 0; i < 100; ++i)
+	{
+		cout << strings[i] << endl;
+	}
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:09:20 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void set(int n)
+	{
+		num = n;
+		if (!p) // 이미 생성되어있기 때문에 예외처리
+		{
+			delete[] p;
+		}
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = i; j < num; ++j)
+		{
+			if (str[i].GetNum() > str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uidNum(10, 70);
+	for (String& d : strings)
+		d.set(uidNum(dre));
+
+	// 길이 오름차순으로 정렬하라
+	SortStrings(strings, 100);
+	// 출력하라
+	for (String& d : strings)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:11:33 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void set(int n)
+	{
+		num = n;
+		if (!p) // 이미 생성되어있기 때문에 예외처리
+		{
+			delete[] p;
+		}
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = i; j < num; ++j)
+		{
+			if (str[i].GetNum() > str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uidNum(10, 70);
+	for (String& d : strings)
+		d.set(uidNum(dre));
+
+	// 길이 오름차순으로 정렬하라
+	// SortStrings(strings, 100);
+	sort(begin(strings), end(strings), [](String a, String b) {return a < b; });
+
+	// 출력하라
+	for (String& d : strings)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:11:43 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void set(int n)
+	{
+		num = n;
+		if (!p) // 이미 생성되어있기 때문에 예외처리
+		{
+			delete[] p;
+		}
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = i; j < num; ++j)
+		{
+			if (str[i].GetNum() > str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uidNum(10, 70);
+	for (String& d : strings)
+		d.set(uidNum(dre));
+
+	// 길이 오름차순으로 정렬하라
+	// SortStrings(strings, 100);
+	sort(begin(strings), end(strings), [](String a, String b) {return a.GetNum() < b.GetNum(); });
+
+	// 출력하라
+	for (String& d : strings)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:11:48 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void set(int n)
+	{
+		num = n;
+		if (!p) // 이미 생성되어있기 때문에 예외처리
+		{
+			delete[] p;
+		}
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = i; j < num; ++j)
+		{
+			if (str[i].GetNum() > str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uidNum(10, 70);
+	for (String& d : strings)
+		d.set(uidNum(dre));
+
+	// 길이 오름차순으로 정렬하라
+	// SortStrings(strings, 100);
+	sort(begin(strings), end(strings), [](String a, String b) {return a.GetNum() > b.GetNum(); });
+
+	// 출력하라
+	for (String& d : strings)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:14:23 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void set(int n)
+	{
+		num = n;
+		if (!p) // 이미 생성되어있기 때문에 예외처리
+		{
+			delete[] p;
+		}
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() const { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = i; j < num; ++j)
+		{
+			if (str[i].GetNum() > str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uidNum(10, 70);
+	for (String& d : strings)
+		d.set(uidNum(dre));
+
+	// 길이 오름차순으로 정렬하라
+	// SortStrings(strings, 100);
+	sort(begin(strings), end(strings), [](const String& a, const String& b) {
+		return a.GetNum() < b.GetNum(); 
+	});
+
+	// 출력하라
+	for (String& d : strings)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 21 15:15:28 2019
+
+==================
+// Smart Pointer
+// 자원을 확보하는 클래스 만들어 놓기
+// ======================================
+#include <iostream>
+#include <functional>
+#include <cmath>
+#include <random>
+#include "save.h"
+using namespace std;
+
+//				자원을 확보하는 클래스 만들기
+// 정수를 생성자의 인자로 받아 그 숫자만큼 HEAP에서 메모리를 할당한다.
+// 메모리의 내용은 'a'~'z' 사이의 임의의 소문자로 채운다.
+// 다음 main이 문제없이 실행되도록 하자
+default_random_engine dre;
+uniform_int_distribution<> uidChar('a', 'z');
+
+// String은 자원을 할당하는 클래스이다
+// 1. 생성 시 new로 자원할당
+// 2. 소멸 시 delete로 해제한다.
+// 3. 복사생성자에서 깊은 복사를 한다.
+// 4. 할당연산자에서 깊은 복사를 한다.
+// 필수적으로 수행해야 함
+class String {
+	int num{ 0 };
+	char *p{ nullptr }; // 변수값을 미리 설정해두는 방법
+public:
+	String() = default;
+	String(int n) : num{n}
+	{
+		p = new char[num]; 
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	
+	// 자원을 할당하는 클래스는 무조건 해줘야 하는 것 : 복사생성자, 할당연산자 ========
+	// String(const String&) = default; // Default 복사 생성자 : 메모리 복사
+	String(const String& other) : num{ other.num }
+	{
+		p = new char[num];
+		memcpy(p, other.p, num);
+	}
+
+	String& operator=(const String& other) // 할당 연산자
+	{
+		// a = a 같은 나 자신에게 할당 하는 경우를 예외처리한다
+		if (this == &other)
+			return *this;
+		delete[] p;
+		num = other.num;
+		p = new char[num];
+		memcpy(p, other.p, num);
+	} // ==============================================================================
+
+	~String() { 
+		delete[] p;
+		p = NULL;
+	}
+
+	void set(int n)
+	{
+		num = n;
+		if (!p) // 이미 생성되어있기 때문에 예외처리
+		{
+			delete[] p;
+		}
+		p = new char[num];
+		for (int i = 0; i < num; ++i)
+		{
+			p[i] = uidChar(dre);
+		}
+	}
+	int GetNum() const { return num; }
+	friend ostream& operator<<(ostream& os, const String& a);
+};
+
+ostream& operator<<(ostream& os, const String& str)
+{
+	for (int i = 0; i < str.num; ++i)
+	{
+		os << str.p[i];
+	}
+	return os;
+}
+
+/*
+class Dog { // ============= 복습 ===================================
+public:
+	void operator()() {}
+
+	void jump() 
+	{ 
+		cout << this << "점프" << endl; 
+	}
+};
+
+void f()// 함수는 반드시 전역에서 만들어야함
+{
+	cout << "그냥 함수" << endl;
+}
+
+int main()
+{
+	// 호출 가능한 타입 ==================
+	// 1. 일반함수
+	// double f1 = sin(3.14);
+	// double (*f1)(double) = sin;
+	// cout << f1(0) << endl;
+
+	//function<double(double)> f1 = sin;
+	function<void(void)> f1 = f;
+	cout << typeid(f1).name() << endl;
+
+	// 2. 람다 ( 람다함수는 지역에서 정의함 )
+	// 지역 함수이기 때문에 [](캡쳐)가 필요
+	// auto f2 = []() { cout << "람다 함수 호출" << endl; };
+	// f2();
+	function<void(void)>f2 = []() { cout << "람다 함수 호출" << endl; };
+	cout << typeid(f2).name() << endl;
+
+	// 3. 함수객체
+	Dog d;
+	d();
+
+	// 4. 멤버 함수
+	//Dog dog;
+	//dog.jump();
+	////auto f4 = &Dog::jump;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//cout << typeid(f4).name() << endl;
+	//(dog.*f4)(); // jump함수 호출
+
+	//Dog* pd = new Dog;
+	//void (Dog::*f4)(void) = &Dog::jump;
+	//(pd->*f4)(); // jump함수 호출
+	
+	Dog a;
+	//a.jump(); // 인자가 없는것 처럼 보이지만 자기 자신의 주소를 넘겨줌
+	function<void(Dog* const)> f4 = &Dog::jump; // 따라서 인자에 Dog* const
+	cout << typeid(f4).name() << endl;
+	f4(&a);
+
+	// ==================== 복습 =========================================================
+	save("main.cpp");
+}
+*/
+
+void SortStrings(String* str, int num)
+{
+
+	for (int i = 0; i < num; ++i)
+	{
+		for (int j = i; j < num; ++j)
+		{
+			if (str[i].GetNum() > str[j].GetNum())
+			{
+				String temp;
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	String a{ 20 }; // ex) gkdlaldlslerpamxmals
+
+	String b = a; // 복사 생성자
+
+	cout << a << endl; // 화면 출력 : gkdlaldlslerpamxmals
+	cout << b << endl;
+
+	cout << "========================" << endl;
+
+	String strings[100];
+	// string을 임의의 길이로 설정하라
+	uniform_int_distribution<> uidNum(10, 70);
+	for (String& d : strings)
+		d.set(uidNum(dre));
+
+	// 길이 오름차순으로 정렬하라
+	// SortStrings(strings, 100);
+	sort(begin(strings), end(strings), [](const String& a, const String& b) {
+		return a.GetNum() < b.GetNum(); 
+	});
+
+	// 출력하라
+	for (String& d : strings)
+		cout << d << endl;
+
+	save("main.cpp");
+}

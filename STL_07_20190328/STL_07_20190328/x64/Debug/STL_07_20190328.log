@@ -1,0 +1,7 @@
+﻿  main.cpp
+  save.cpp
+c:\users\administrator\source\repos\stl_07_20190328\stl_07_20190328\save.cpp(25): error C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\time.h(476): note: 'ctime' 선언을 참조하십시오.
+  String.cpp
+  코드를 생성하고 있습니다...
+c:\users\administrator\source\repos\stl_07_20190328\stl_07_20190328\string.cpp(25): warning C4715: 'String::operator=': 모든 제어 경로에서 값을 반환하지는 않습니다.

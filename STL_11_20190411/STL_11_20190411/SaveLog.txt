@@ -1,0 +1,1269 @@
+
+
+==================
+Thu Apr 11 14:11:20 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+
+	save("main.cpp");
+}
+
+==================
+Thu Apr 11 14:39:26 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+
+int main()
+{
+	//createcpp();
+	ifstream in("main.cpp");
+	deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+
+	for (auto p = d.rbegin(); p != d.rend(); ++p)
+		cout << *p;
+	cout << endl;
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+
+==================
+Thu Apr 11 14:40:22 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+
+int main()
+{
+	//createcpp();
+	ifstream in("main.cpp");
+	deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+
+	for (auto p = d.begin(); p != d.end(); ++p)
+		cout << *p;
+	cout << endl;
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+
+==================
+Thu Apr 11 14:40:33 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+
+int main()
+{
+	//createcpp();
+	ifstream in("main.cpp");
+	deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+
+	for (auto p = d.rbegin(); p != d.rend(); ++p)
+		cout << *p;
+	cout << endl;
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+
+==================
+Thu Apr 11 14:41:07 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+
+int main()
+{
+	//createcpp();
+	ifstream in("main.cpp");
+	deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+
+	for (auto p = d.rbegin(); p != d.rend(); ++p)
+		cout << *p;
+	cout << endl;
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+
+==================
+Thu Apr 11 14:43:10 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+
+int main()
+{
+	//createcpp();
+	ifstream in("main.cpp");
+	deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+
+	/*for (auto p = d.rbegin(); p != d.rend(); ++p)
+		cout << *p;
+	cout << endl;*/
+
+	istreambuf_iterator<char> p(in);
+
+	while (p != istreambuf_iterator<char>()) {
+		cout << *p++;
+	}
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+
+==================
+Thu Apr 11 14:43:14 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+
+int main()
+{
+	//createcpp();
+	ifstream in("main.cpp");
+	deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+
+	/*for (auto p = d.rbegin(); p != d.rend(); ++p)
+		cout << *p;
+	cout << endl;*/
+
+	istreambuf_iterator<char> p(in);
+
+	while (p != istreambuf_iterator<char>()) {
+		cout << *p++;
+	}
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+
+==================
+Thu Apr 11 14:43:21 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+
+int main()
+{
+	//createcpp();
+	ifstream in("main.cpp");
+	//deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+
+	/*for (auto p = d.rbegin(); p != d.rend(); ++p)
+		cout << *p;
+	cout << endl;*/
+
+	istreambuf_iterator<char> p(in);
+
+	while (p != istreambuf_iterator<char>()) {
+		cout << *p++;
+	}
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+
+==================
+Thu Apr 11 14:44:37 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+
+int main()
+{
+	//createcpp();
+	ifstream in("main.cpp");
+	//deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	/*for (auto p = d.rbegin(); p != d.rend(); ++p)
+		cout << *p;
+	cout << endl;*/
+
+	istreambuf_iterator<char> p(in);
+
+	deque<char> d;
+	while (p != istreambuf_iterator<char>()) {
+		//cout << *p++;
+		d.push_front(*p++);
+	}
+	for (char d : d)
+		cout << d;
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+
+==================
+Thu Apr 11 14:45:05 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+
+int main()
+{
+	//createcpp();
+	ifstream in("main.cpp");
+	//deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	/*for (auto p = d.rbegin(); p != d.rend(); ++p)
+		cout << *p;
+	cout << endl;*/
+
+	istreambuf_iterator<char> p(in);
+
+	deque<char> d;
+	while (p != istreambuf_iterator<char>()) {
+		//cout << *p++;
+		d.push_front(*p++);
+	}
+	for (char d : d)
+		cout << d;
+
+	save("main.cpp");
+}
+
+
+
+==================
+Thu Apr 11 14:51:31 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+// - list
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+void printcpp();
+
+int main()
+{
+	//createcpp();
+	//printcpp();
+	ifstream in("main.cpp");
+	deque<char> d;
+
+	copy(istreambuf_iterator<char>(in), istreambuf_iterator<char>(), 
+		// 덱의 앞쪽에 insert, copy가 넣는게 아닌 삽입 반복자 어댑터를 통해 덱이 직접 집어넣도록
+		front_inserter(d)
+		);
+
+	copy(d.begin(), d.end(), ostreambuf_iterator<char>(cout));
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+void printcpp()
+{
+	ifstream in("main.cpp");
+	//deque<char> d = { istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	/*for (auto p = d.rbegin(); p != d.rend(); ++p)
+	cout << *p;
+	cout << endl;*/
+
+	istreambuf_iterator<char> p(in);
+
+	deque<char> d;
+	while (p != istreambuf_iterator<char>()) {
+		//cout << *p++;
+		d.push_front(*p++);
+	}
+	for (char d : d)
+		cout << d;
+}
+
+==================
+Thu Apr 11 14:58:05 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+//
+// - list : 여기부터는 원소 하나 보다 더 큰 메모리가 필요하다 편리함을 위해서
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+
+#include <list>
+
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+void printcpp();
+
+// list에 String 객체 10, 20, 30을 추가하자
+
+int main()
+{
+	list<String> l;
+	l.emplace_back(10);
+	l.emplace_back(20);
+	l.emplace_back(30);
+
+	for (auto d : l)
+		cout << d;
+
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+void printcpp()
+{
+	ifstream in("main.cpp");
+	deque<char> d;
+
+	copy(istreambuf_iterator<char>(in), istreambuf_iterator<char>(),
+		// 덱의 앞쪽에 insert, copy가 넣는게 아닌 삽입 반복자 어댑터를 통해 덱이 직접 집어넣도록
+		front_inserter(d)
+	);
+
+	copy(d.begin(), d.end(), ostreambuf_iterator<char>(cout));
+}
+
+==================
+Thu Apr 11 14:58:16 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+//
+// - list : 여기부터는 원소 하나 보다 더 큰 메모리가 필요하다 편리함을 위해서
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+
+#include <list>
+
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+void printcpp();
+
+// list에 String 객체 10, 20, 30을 추가하자
+
+int main()
+{
+	list<String> l;
+	l.emplace_back(10);
+	l.emplace_back(20);
+	l.emplace_back(30);
+
+	for (auto d : l)
+		cout << d << endl;
+
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+void printcpp()
+{
+	ifstream in("main.cpp");
+	deque<char> d;
+
+	copy(istreambuf_iterator<char>(in), istreambuf_iterator<char>(),
+		// 덱의 앞쪽에 insert, copy가 넣는게 아닌 삽입 반복자 어댑터를 통해 덱이 직접 집어넣도록
+		front_inserter(d)
+	);
+
+	copy(d.begin(), d.end(), ostreambuf_iterator<char>(cout));
+}
+
+==================
+Thu Apr 11 14:58:24 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+//
+// - list : 여기부터는 원소 하나 보다 더 큰 메모리가 필요하다 편리함을 위해서
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+
+#include <list>
+
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+void printcpp();
+
+// list에 String 객체 10, 20, 30을 추가하자
+
+int main()
+{
+	list<String> l;
+	l.emplace_back(10);
+	l.emplace_back(20);
+	l.emplace_back(30);
+
+	for (auto& d : l)
+		cout << d << endl;
+
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+void printcpp()
+{
+	ifstream in("main.cpp");
+	deque<char> d;
+
+	copy(istreambuf_iterator<char>(in), istreambuf_iterator<char>(),
+		// 덱의 앞쪽에 insert, copy가 넣는게 아닌 삽입 반복자 어댑터를 통해 덱이 직접 집어넣도록
+		front_inserter(d)
+	);
+
+	copy(d.begin(), d.end(), ostreambuf_iterator<char>(cout));
+}
+
+==================
+Thu Apr 11 14:58:36 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+//
+// - list : 여기부터는 원소 하나 보다 더 큰 메모리가 필요하다 편리함을 위해서
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+
+#include <list>
+
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+void printcpp();
+
+// list에 String 객체 10, 20, 30을 추가하자
+
+int main()
+{
+	list<String> l;
+	l.emplace_back(10);
+	l.emplace_back(20);
+	l.emplace_back(30);
+
+	cout << endl;
+	for (auto& d : l)
+		cout << d << endl;
+	cout << endl;
+
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+void printcpp()
+{
+	ifstream in("main.cpp");
+	deque<char> d;
+
+	copy(istreambuf_iterator<char>(in), istreambuf_iterator<char>(),
+		// 덱의 앞쪽에 insert, copy가 넣는게 아닌 삽입 반복자 어댑터를 통해 덱이 직접 집어넣도록
+		front_inserter(d)
+	);
+
+	copy(d.begin(), d.end(), ostreambuf_iterator<char>(cout));
+}
+
+==================
+Thu Apr 11 15:08:14 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+//
+// - list : 여기부터는 원소 하나 보다 더 큰 메모리가 필요하다 편리함을 위해서
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+
+#include <list>
+
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+void printcpp();
+
+// list에 String 객체 10, 20, 30을 추가하자
+
+int main()
+{
+	list<String> strings;
+	strings.emplace_back(30);
+	strings.emplace_back(20);
+	strings.emplace_back(10);
+
+	strings.emplace(strings.begin(), 10);
+
+	cout << endl;
+	for (auto& d : strings)
+		cout << d << endl;
+	cout << endl;
+
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+void printcpp()
+{
+	ifstream in("main.cpp");
+	deque<char> d;
+
+	copy(istreambuf_iterator<char>(in), istreambuf_iterator<char>(),
+		// 덱의 앞쪽에 insert, copy가 넣는게 아닌 삽입 반복자 어댑터를 통해 덱이 직접 집어넣도록
+		front_inserter(d)
+	);
+
+	copy(d.begin(), d.end(), ostreambuf_iterator<char>(cout));
+}
+
+==================
+Thu Apr 11 15:08:35 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+//
+// - list : 여기부터는 원소 하나 보다 더 큰 메모리가 필요하다 편리함을 위해서
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+
+#include <list>
+
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+void printcpp();
+
+// list에 String 객체 10, 20, 30을 추가하자
+
+int main()
+{
+	list<String> strings;
+	strings.emplace_back(30);
+	strings.emplace_back(20);
+	strings.emplace_back(10);
+
+	auto p = strings.emplace(strings.begin(), 10);
+	cout << p << endl;
+
+	cout << endl;
+	for (auto& d : strings)
+		cout << d << endl;
+	cout << endl;
+
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+void printcpp()
+{
+	ifstream in("main.cpp");
+	deque<char> d;
+
+	copy(istreambuf_iterator<char>(in), istreambuf_iterator<char>(),
+		// 덱의 앞쪽에 insert, copy가 넣는게 아닌 삽입 반복자 어댑터를 통해 덱이 직접 집어넣도록
+		front_inserter(d)
+	);
+
+	copy(d.begin(), d.end(), ostreambuf_iterator<char>(cout));
+}
+
+==================
+Thu Apr 11 15:08:40 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+//
+// - list : 여기부터는 원소 하나 보다 더 큰 메모리가 필요하다 편리함을 위해서
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+
+#include <list>
+
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+void printcpp();
+
+// list에 String 객체 10, 20, 30을 추가하자
+
+int main()
+{
+	list<String> strings;
+	strings.emplace_back(30);
+	strings.emplace_back(20);
+	strings.emplace_back(10);
+
+	auto p = strings.emplace(strings.begin(), 10);
+	cout << *p << endl;
+
+	cout << endl;
+	for (auto& d : strings)
+		cout << d << endl;
+	cout << endl;
+
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+void printcpp()
+{
+	ifstream in("main.cpp");
+	deque<char> d;
+
+	copy(istreambuf_iterator<char>(in), istreambuf_iterator<char>(),
+		// 덱의 앞쪽에 insert, copy가 넣는게 아닌 삽입 반복자 어댑터를 통해 덱이 직접 집어넣도록
+		front_inserter(d)
+	);
+
+	copy(d.begin(), d.end(), ostreambuf_iterator<char>(cout));
+}
+
+==================
+Thu Apr 11 15:09:34 2019
+
+==================
+// =====================================================
+// 2장 순차 컨테이너
+// - deque : 편리하려고 속도를 아주 조금 희생하였다.
+//
+// - list : 여기부터는 원소 하나 보다 더 큰 메모리가 필요하다 편리함을 위해서
+// - forward_list
+// =====================================================
+#include <iostream>
+#include "save.h"
+#include "String.h"
+
+#include <list>
+
+#include <algorithm>
+#include <fstream>
+#include <deque>
+#include <vector>
+using namespace std;
+
+// 소스파일을 뒤에서 부터 출력하라
+void createcpp();
+void printcpp();
+
+// list에 String 객체 10, 20, 30을 추가하자
+
+int main()
+{
+	list<String> strings;
+	//strings.emplace_back(30);
+	//strings.emplace_back(20);
+	//strings.emplace_back(10);
+
+	auto p = strings.emplace(strings.begin(), 10);
+	p = strings.emplace(strings.begin(), 20);
+	p = strings.emplace(strings.begin(), 30);
+
+	cout << endl;
+	for (auto& d : strings)
+		cout << d << endl;
+	cout << endl;
+
+
+	save("main.cpp");
+}
+
+void createcpp()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	// 특정 글자를 지운다
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+	return e == 'e';
+	});
+	v.erase(p, v.end());*/ 
+
+
+	ofstream out("거꾸로소스.cpp");
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();
+}
+void printcpp()
+{
+	ifstream in("main.cpp");
+	deque<char> d;
+
+	copy(istreambuf_iterator<char>(in), istreambuf_iterator<char>(),
+		// 덱의 앞쪽에 insert, copy가 넣는게 아닌 삽입 반복자 어댑터를 통해 덱이 직접 집어넣도록
+		front_inserter(d)
+	);
+
+	copy(d.begin(), d.end(), ostreambuf_iterator<char>(cout));
+}

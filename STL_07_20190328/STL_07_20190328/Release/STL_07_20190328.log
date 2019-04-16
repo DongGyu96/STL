@@ -1,0 +1,8 @@
+﻿  main.cpp
+c:\users\administrator\source\repos\stl_07_20190328\stl_07_20190328\main.cpp(117): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  코드를 생성하고 있습니다.
+  2 of 265 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  STL_07_20190328.vcxproj -> C:\Users\Administrator\source\repos\STL_07_20190328\Release\STL_07_20190328.exe

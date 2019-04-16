@@ -1,0 +1,2077 @@
+
+
+==================
+Thu Mar 28 13:34:29 2019
+
+==================
+#include<iostream>
+#include "save.h"
+using namespace std;
+
+
+void Practice3();
+
+int main()
+{
+	Practice3();
+
+	save("main.cpp");
+}
+
+void Practice3()
+{
+	string s[5] = { "spring", "summer", "winter", "and", "fall" };
+	cout << sizeof(string) << endl;
+}
+
+==================
+Thu Mar 28 13:34:41 2019
+
+==================
+#include<iostream>
+#include "save.h"
+using namespace std;
+
+
+void Practice3();
+
+int main()
+{
+	Practice3();
+
+	save("main.cpp");
+}
+
+void Practice3()
+{
+	string s[5] = { "spring", "summer", "winter", "and", "fall" };
+	cout << sizeof(string) << endl;
+}
+
+==================
+Thu Mar 28 13:34:54 2019
+
+==================
+#include<iostream>
+#include "save.h"
+using namespace std;
+
+
+void Practice3();
+
+int main()
+{
+	Practice3();
+
+	save("main.cpp");
+}
+
+void Practice3()
+{
+	string s[5] = { "spring", "summer", "winter", "and", "fall" };
+	cout << sizeof(string) << endl;
+}
+
+==================
+Thu Mar 28 13:35:13 2019
+
+==================
+#include<iostream>
+#include "save.h"
+using namespace std;
+
+
+void Practice3();
+
+int main()
+{
+	Practice3();
+
+	save("main.cpp");
+}
+
+void Practice3()
+{
+	string s[5] = { "spring", "summer", "winter", "and", "fall" };
+	cout << sizeof(string) << endl;
+}
+
+==================
+Thu Mar 28 13:47:45 2019
+
+==================
+#include<iostream>
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+
+int main()
+{
+	Practice2();
+
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] = { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	auto p = begin(s);
+	
+	cout << *p << endl;
+
+	cout << sizeof(string) << endl;
+}
+
+==================
+Thu Mar 28 13:47:58 2019
+
+==================
+#include<iostream>
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+
+int main()
+{
+	Practice2();
+
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] = { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	auto p = begin(s);
+	
+	cout << *p << endl;
+
+	cout << sizeof(string) << endl;
+}
+
+==================
+Thu Mar 28 13:48:12 2019
+
+==================
+#include<iostream>
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+
+int main()
+{
+	Practice2();
+
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	set<string> s[5] = { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	auto p = begin(s);
+	
+	cout << *p << endl;
+
+	cout << sizeof(string) << endl;
+}
+
+==================
+Thu Mar 28 13:48:46 2019
+
+==================
+#include<iostream>
+#include<set>
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+
+int main()
+{
+	Practice2();
+
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	auto p = begin(s);
+	
+	cout << *p << endl;
+
+	cout << sizeof(string) << endl;
+}
+
+==================
+Thu Mar 28 13:50:48 2019
+
+==================
+#include<iostream>
+#include<set>
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+
+int main()
+{
+	Practice2();
+
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	auto p = begin(s);
+	
+	while (p != end(s))
+	{
+		// *p : 역참조연산자
+		cout << *p++ << endl;
+	}
+}
+
+==================
+Thu Mar 28 14:00:19 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+
+int main()
+{
+	Practice2();
+
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+}
+
+==================
+Thu Mar 28 14:01:31 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+
+int main()
+{
+	Practice2();
+
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+==================
+Thu Mar 28 14:05:21 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+
+int main()
+{
+	// Practice2();
+	Practice3();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	string s[5]{ "spring", "summer", "winter", "and", "fall" };
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		transform(begin(str), end(str), begin(str), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+}
+
+==================
+Thu Mar 28 14:05:39 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+
+int main()
+{
+	// Practice2();
+	Practice3();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	string s[5]{ "spring", "summer", "winter", "and", "fall" };
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		transform(begin(str), end(str), begin(str), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+
+}
+
+==================
+Thu Mar 28 14:08:34 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+
+int main()
+{
+	// Practice2();
+	Practice3();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](String& str) {
+		transform(&str, &str + str.getNum(), &str, [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+
+}
+
+==================
+Thu Mar 28 14:08:46 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+
+int main()
+{
+	// Practice2();
+	Practice3();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(&str, &str + str.getNum(), ostream_iterator<string>(cout, "\n"),
+		[](String& str) {
+		transform(&str, &str + str.getNum(), &str, [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+
+}
+
+==================
+Thu Mar 28 14:10:51 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+
+int main()
+{
+	// Practice2();
+	Practice3();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(s, s + 5, ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(&str, &str + str.getNum(), &str, [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+
+}
+
+==================
+Thu Mar 28 14:10:58 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+
+int main()
+{
+	// Practice2();
+	Practice3();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(&s, &s + 5, ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(&str, &str + str.getNum(), &str, [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+
+}
+
+==================
+Thu Mar 28 14:11:37 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+
+int main()
+{
+	// Practice2();
+	Practice3();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+
+}
+
+==================
+Thu Mar 28 14:11:55 2019
+
+==================
+#include<iostream>
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+
+int main()
+{
+	// Practice2();
+	Practice3();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+
+}
+
+==================
+Thu Mar 28 14:39:55 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[10];
+	array<int, 10> a;
+
+	cout << sizeof(a) << endl;
+
+}
+
+==================
+Thu Mar 28 14:44:31 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1,2,3,4,5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	for (int i = 0; i < 5; ++i)
+	{
+		cout << a[i] << endl;
+	}
+
+	cout << sizeof(a) << endl;
+
+}
+
+==================
+Thu Mar 28 14:45:58 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 50000> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	for (int i = 0; i < a.size(); ++i)
+	{
+		cout << a[i] << " ";
+	}
+
+}
+
+==================
+Thu Mar 28 14:51:16 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	for (int i = -100; i < a.size(); ++i)
+	{
+		cout << a[i] << " ";
+	}
+
+}
+
+==================
+Thu Mar 28 14:51:22 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	for (int i = -100; i < a.size(); ++i)
+	{
+		cout << a[i] << " ";
+	}
+
+}
+
+==================
+Thu Mar 28 14:51:27 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	for (int i = 0; i < a.size(); ++i)
+	{
+		cout << a[i] << " ";
+	}
+
+}
+
+==================
+Thu Mar 28 14:51:33 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	for (int i = -50; i < a.size(); ++i)
+	{
+		cout << a[i] << " ";
+	}
+
+}
+
+==================
+Thu Mar 28 14:51:38 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	for (int i = -50; i < a.size(); ++i)
+	{
+		cout << a[i] << " ";
+	}
+
+}
+
+==================
+Thu Mar 28 14:51:44 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	for (int i = -5; i < a.size(); ++i)
+	{
+		cout << a[i] << " ";
+	}
+
+}
+
+==================
+Thu Mar 28 14:53:46 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	// STL은 검사를 하지 않기 때문에 범위를 벗어나도 오류가 발생하지 않는다
+	for (int i = -100; i < a.size(); ++i)
+	{
+		cout << a[i] << " ";
+	}
+
+
+}
+
+==================
+Thu Mar 28 15:01:39 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	// STL은 검사를 하지 않기 때문에 범위를 벗어나도 오류가 발생하지 않는다
+	while (false) {
+		cout << "몇번째 값 : ";
+		int num;
+		cin >> num;
+		// cout << a[num] << endl;
+		// 만약 검사가 필요하다면 at(index)를 사용한다.
+		// cout << a.at(num) << endl;
+		try {
+			cout << a.at(num) << endl;
+		}
+		// 예외를 받아서 처리하는 부분
+		catch (exception& e) {
+			cout << e.what() << endl;
+		} // 그러나 잘 사용하지 않는다
+	}
+
+	
+
+}
+
+==================
+Thu Mar 28 15:01:54 2019
+
+==================
+// ====================================================
+// 2장 순차 컨테이너 ( STL Sequence Container )
+// - array			- 
+// - vector			- 물리적으로 인접한 메모리공간 ( Contiguous )
+// - deque			- 
+// - list			-
+// - forward_list	-
+// ====================================================
+#include<iostream>
+
+//Practice2~3-----------
+#include<string>
+#include<set>
+#include<algorithm>
+#include<iterator>
+//----------------------
+
+//Array-----------------
+#include<array>
+//----------------------
+
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+void Practice2();
+void Practice3();
+void Array();
+
+int main()
+{
+	//Practice2();
+	//Practice3();
+	Array();
+	save("main.cpp");
+}
+
+void Practice2()
+{
+	string s[5] { "spring", "summer", "winter", "and", "fall" };
+	// set<string> s { "spring", "summer", "winter", "and", "fall" };
+	// 자료구조가 달라져도 첫 원소가 무엇인지 받을 수 있다면 유효한 코드가 된다.
+	//auto p = begin(s);
+	//while (p != end(s))
+	//{
+	//	// *p : 역참조연산자
+	//	cout << *p++ << endl;
+	//}
+
+	transform(begin(s), end(s), ostream_iterator<string>(cout, "\n"),
+		[](string& str) {
+		for (auto p = begin(str); p != end(str); ++p)
+			if (*p == 'a' || *p == 'e' || *p == 'i' || *p == 'o' || *p == 'u')
+				*p = '*';
+		return str;
+	});
+
+	for (int i = 0; i < 5; ++i)
+		cout << s[i] << endl;
+
+}
+
+void Practice3()
+{
+	// string s[5]{ "spring", "summer", "winter", "and", "fall" };
+	String s[5]{ 10, 20, 30, 40, 50 };
+
+	// transform(어디서부터, 어디까지, 어디로, 어떻게);
+	transform(begin(s), end(s), ostream_iterator<String>(cout, "\n"),
+		[](String& str) {
+		transform(str.getP(), str.getP() + str.getNum(), str.getP(), [](char c) {
+			c = toupper(c);
+			return c;
+		});
+		return str;
+	});
+}
+
+void Array()
+{
+	// 모든 STL컨테이너는 반복자를 통해 원소에 접근한다
+	// 컨테이너 Array는 어디에 사용하는게 좋은가?
+	// int a[5];
+	array<int, 5> a { 1, 2, 3, 4, 5 };
+	// 만약 생성자의 인자가 2개이상일 경우 {}로 한번더 묶어준다
+	// array<int, 3> a { { 1 , 2 }, { 3, 4 }, { 5, 6 } };
+
+	// STL은 검사를 하지 않기 때문에 범위를 벗어나도 오류가 발생하지 않는다
+	while (false) {
+		cout << "몇번째 값 : ";
+		int num;
+		cin >> num;
+		// cout << a[num] << endl;
+		// 만약 검사가 필요하다면 at(index)를 사용한다.
+		// cout << a.at(num) << endl;
+		try {
+			cout << a.at(num) << endl;
+		}
+		// 예외를 받아서 처리하는 부분
+		catch (exception& e) {
+			cout << e.what() << endl;
+		} // 그러나 잘 사용하지 않는다
+	}
+
+	
+
+}

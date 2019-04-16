@@ -1,0 +1,5162 @@
+
+
+==================
+Fri Apr  5 13:33:04 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+
+	v.emplace_back(10);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:33:17 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+
+	v.emplace_back(10);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:34:01 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+
+	v.emplace_back(10);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:38:27 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.push_back(10);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:40:39 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(30);
+
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.assign(1, 20);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:40:47 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(30);
+
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.assign(1, 20);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:41:04 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(30);
+
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.assign(0, 20);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:42:30 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(30);
+
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.emplace(v.begin() + 1, 20);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:43:04 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(30);
+
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.emplace(v.begin() + 1, 20);
+
+	for (auto&d : v)
+		cout << d << endl;
+	cout << v.max_size() << endl;
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:44:47 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(30);
+
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.emplace(v.begin() + 1, 20);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:46:16 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(30);
+
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.emplace(v.begin() + 1, 20);
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:46:55 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.emplace(v.begin() + 1, 20);
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:48:58 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+	v.emplace_back(40);
+	v.emplace_back(50);
+	v.emplace_back(60);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.emplace(v.begin() + 1, 20);
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:49:05 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+	v.emplace_back(40);
+	v.emplace_back(50);
+	v.emplace_back(60);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	v.emplace(v.begin() + 1, 20);
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:51:13 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	v.assign(1, 1);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:51:56 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	v.assign(1, 2);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:52:42 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	v.erase(v.begin() + 1);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:52:59 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	v.erase(v.begin());
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:53:11 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	v.erase();
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 13:59:38 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:00:11 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:02:03 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:02:32 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:03:16 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:03:56 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:04:20 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:05:27 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:08:03 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:08:51 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	for (auto&d : i)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:09:08 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:09:12 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:09:18 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:09:33 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << endl << endl << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl;
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:09:44 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	// 어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl;
+
+	for (auto&d : v)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:11:29 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	remove(v.begin(), v.end(), 20);
+	//		== remove(v.begin(), v.end(), String(20))
+	//					어디부터 어디까지 무엇을
+
+	cout << endl << endl << "--------------------------" << endl;
+
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:17:44 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	auto p = remove(v.begin(), v.end(), 20);
+	//		== remove(v.begin(), v.end(), String(20))
+	//					어디부터 어디까지 무엇을
+
+	// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+	// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+	// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+	v.erase(p, v.end());
+
+	cout << endl << endl << "--------------------------" << endl;
+
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:18:04 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	auto p = remove(v.begin(), v.end(), String(20));
+	//		== remove(v.begin(), v.end(), String(20))
+	//					어디부터 어디까지 무엇을
+
+	// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+	// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+	// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+	v.erase(p, v.end());
+
+	cout << endl << endl << "--------------------------" << endl;
+
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:18:25 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	auto p = remove(v.begin(), v.end(), String(20));
+	//		== remove(v.begin(), v.end(), String(20))
+	//					어디부터 어디까지 무엇을
+
+	// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+	// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+	// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+	v.erase(p, v.end());
+
+	cout << endl << endl << "--------------------------" << endl;
+
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:19:27 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	// auto p = remove(v.begin(), v.end(), String(20));
+	//		== remove(v.begin(), v.end(), 20)
+	//					어디부터 어디까지 무엇을
+
+	// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+	// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+	// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+	// v.erase(p, v.end());
+
+	// 즉 결국
+	v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+
+	cout << endl << endl << "--------------------------" << endl;
+
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:20:04 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<String> v;
+	v.reserve(10);
+
+	v.emplace_back(10);
+	v.emplace_back(20);
+	v.emplace_back(30);
+
+	cout << "--------------------------" << endl << endl << endl;
+	// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+	// v.emplace(v.begin() + 1, 20);
+
+	// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+	// v.erase();
+	// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+	// 알고리즘은 다른곳에서 다룬다
+	// auto p = remove(v.begin(), v.end(), String(20));
+	//		== remove(v.begin(), v.end(), 20)
+	//					어디부터 어디까지 무엇을
+
+	// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+	// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+	// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+	// v.erase(p, v.end());
+
+	// 즉
+	// erase-remove idiom
+	v.erase(remove(v.begin(), v.end(), 20), v.end());
+
+	cout << endl << endl << "--------------------------" << endl;
+
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << endl;
+
+	save("main.cpp");
+}
+
+==================
+Fri Apr  5 14:34:56 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return;
+
+	ofstream out("e없는소스.cpp");
+
+
+	// fname의 모든 내용을 덧붙여 쓴다
+	copy(std::istreambuf_iterator<char>(in),
+		istreambuf_iterator<char>(),
+		ostreambuf_iterator<char>(out));//copy(어디부터, 어디까지, 어디로)
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:35:15 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+
+	// fname의 모든 내용을 덧붙여 쓴다
+	copy(std::istreambuf_iterator<char>(in),
+		istreambuf_iterator<char>(),
+		ostreambuf_iterator<char>(out));//copy(어디부터, 어디까지, 어디로)
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:37:28 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	string str;
+	while (in.eof())
+	{
+		getline(in, str);
+		remove_if(str.begin(), str.end(), "e");
+	}
+
+	// fname의 모든 내용을 덧붙여 쓴다
+	copy(std::istreambuf_iterator<char>(in),
+		istreambuf_iterator<char>(),
+		ostreambuf_iterator<char>(out));//copy(어디부터, 어디까지, 어디로)
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:38:29 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	string str;
+	while (in.eof())
+	{
+		getline(in, str);
+		remove_if(str.begin(), str.end(), string("e"));
+	}
+
+	// fname의 모든 내용을 덧붙여 쓴다
+	copy(std::istreambuf_iterator<char>(in),
+		istreambuf_iterator<char>(),
+		ostreambuf_iterator<char>(out));//copy(어디부터, 어디까지, 어디로)
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:38:54 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	string str;
+	while (in.eof())
+	{
+		getline(in, str);
+		remove_if(str.begin(), str.end(), "e");
+	}
+
+	// fname의 모든 내용을 덧붙여 쓴다
+	copy(std::istreambuf_iterator<char>(in),
+		istreambuf_iterator<char>(),
+		ostreambuf_iterator<char>(out));//copy(어디부터, 어디까지, 어디로)
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:40:10 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	vector<char> v{ istream_iterator<string>(in), istream_iterator<char>() };
+
+	// fname의 모든 내용을 덧붙여 쓴다
+	copy(std::istreambuf_iterator<char>(in),
+		istreambuf_iterator<char>(),
+		ostreambuf_iterator<char>(out));//copy(어디부터, 어디까지, 어디로)
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:40:36 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	vector<string> v{ istream_iterator<string>(in), istream_iterator<string>() };
+
+	remove_if(v.begin(), v.end(), "e");
+
+	// fname의 모든 내용을 덧붙여 쓴다
+	copy(std::istreambuf_iterator<char>(in),
+		istreambuf_iterator<char>(),
+		ostreambuf_iterator<char>(out));//copy(어디부터, 어디까지, 어디로)
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:41:12 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	vector<string> v{ istream_iterator<string>(in), istream_iterator<string>() };
+
+	remove_if(v.begin(), v.end(), "e");
+
+	// fname의 모든 내용을 덧붙여 쓴다
+	copy(std::istreambuf_iterator<string>(v),
+		istreambuf_iterator<string>(),
+		ostreambuf_iterator<string>(out));//copy(어디부터, 어디까지, 어디로)
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:41:36 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	vector<char> v{ istream_iterator<char>(in), istream_iterator<char>() };
+
+	remove_if(v.begin(), v.end(), "e");
+
+	// fname의 모든 내용을 덧붙여 쓴다
+	copy(istreambuf_iterator<char>(v),
+		istreambuf_iterator<char>(),
+		ostreambuf_iterator<char>(out));//copy(어디부터, 어디까지, 어디로)
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:46:36 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	vector<char> v{istream_iterator<char>(in), istream_iterator<char>()};
+	
+	remove_if(v.begin(), v.end(), "e");
+
+	for (auto&d : v)
+		out << d;
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:46:42 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	vector<char> v{istream_iterator<char>(in), istream_iterator<char>()};
+	
+	//remove_if(v.begin(), v.end(), "e");
+
+	for (auto&d : v)
+		out << d;
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:47:03 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	vector<char> v{istreambuf_iterator<char>(in), istreambuf_iterator<char>()};
+	
+	//remove_if(v.begin(), v.end(), "e");
+
+	for (auto&d : v)
+		out << d;
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:48:42 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	vector<char> v{istreambuf_iterator<char>(in), istreambuf_iterator<char>()};
+	
+	remove_if(v.begin(), v.end(), [](const char e) {if(e == 'e')return true; });
+
+	for (auto&d : v)
+		out << d;
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:49:54 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	ofstream out("e없는소스.cpp");
+
+	vector<char> v{istreambuf_iterator<char>(in), istreambuf_iterator<char>()};
+	
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+
+	v.erase(p, v.end());
+
+	for (auto&d : v)
+		out << d;
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:52:17 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{istreambuf_iterator<char>(in), istreambuf_iterator<char>()};
+	
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	/*for (auto&d : v)
+		out << d;*/
+	copy(v.begin, v.end(), ostreambuf_iterator<char>(out));
+
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:52:47 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{istreambuf_iterator<char>(in), istreambuf_iterator<char>()};
+	
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	/*for (auto&d : v)
+		out << d;*/
+
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:53:15 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{istreambuf_iterator<char>(in), istreambuf_iterator<char>()};
+	
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	for (auto&d : v)
+		cout << d;
+
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:53:25 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{istreambuf_iterator<char>(in), istreambuf_iterator<char>()};
+	
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	for (auto&d : v)
+		cout << d;
+
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 14:56:13 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque
+// - list
+// - forward_list
+// ==========================================================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <iterator>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+int main()
+{
+	ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{istreambuf_iterator<char>(in), istreambuf_iterator<char>()};
+	
+	/*auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());*/
+
+	ofstream out("거꾸로소스.cpp");
+	//for (auto&d : v)
+	//	out << d;
+
+	copy(v.rbegin(), v.rend(), ostreambuf_iterator<char>(out));
+
+
+	out.close();
+	in.close();
+
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:06:42 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+	
+	d.push_front(10);
+	d.push_front(20);
+	d.push_front(30);
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:07:00 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+	
+	d.emplace_front(10);
+	d.emplace_front(20);
+	d.emplace_front(30);
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:07:16 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+
+	d.emplace_front(10);
+	d.emplace_front(20);
+	d.emplace_front(30);
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:07:35 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+
+	d.emplace_front(10);
+	d.emplace_front(20);
+	d.emplace_front(30);
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:08:23 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+
+	d.emplace_front(10);
+	d.emplace_front(20);
+	d.emplace_front(30);
+
+	for (auto& i : d)
+		cout << i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:08:47 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+
+	d.emplace_front(10);
+	d.emplace_front(20);
+	d.emplace_front(30);
+
+	for (auto& i : d)
+		cout << i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:09:08 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+
+	d.emplace_front(10);
+	d.emplace_front(20);
+	d.emplace_front(30);
+
+	for (auto& i : d)
+		cout << i << endl;
+
+	for (int i = 0; i < d.size(); ++i)
+		cout << d[i] << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:09:35 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	vector<String> d;
+
+	d.emplace_front(10);
+	d.emplace_front(20);
+	d.emplace_front(30);
+
+	for (auto& i : d)
+		cout << i << endl;
+	for (int i = 0; i < d.size(); ++i)
+		cout << d[i] << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:09:43 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	vector<String> d;
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+
+	for (auto& i : d)
+		cout << i << endl;
+	for (int i = 0; i < d.size(); ++i)
+		cout << d[i] << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:09:53 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	vector<String> d;
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+
+	for (auto& i : d)
+		cout << i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:10:04 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+
+	for (auto& i : d)
+		cout << i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:10:26 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+
+	for (auto& i : d)
+		cout << i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:12:00 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+
+	for (auto& i : d)
+		cout << i << endl;
+
+	cout << sizeof(d) << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:13:58 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+
+	/*for (auto& i : d)
+		cout << i << endl;*/
+	for (auto i = d.begin(); i < d.end(); ++i)
+		cout << *i << endl;
+	cout << sizeof(d) << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:14:25 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+	// sizeof(d)는 40바이트
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+
+	/*for (auto& i : d)
+		cout << i << endl;*/
+	for (auto i = d.begin(); i < d.end(); ++i)
+		cout << *i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:14:39 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+	// sizeof(d)는 40바이트
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+	d.emplace_back(40);
+	d.emplace_back(50);
+	d.emplace_back(60);
+	d.emplace_back(70);
+	d.emplace_back(80);
+	d.emplace_back(90);
+
+	/*for (auto& i : d)
+		cout << i << endl;*/
+	for (auto i = d.begin(); i < d.end(); ++i)
+		cout << *i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:15:13 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+	// sizeof(d)는 40바이트
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+	d.emplace_back(40);
+	d.emplace_back(50);
+	d.emplace_back(60);
+	d.emplace_back(70);
+	d.emplace_back(80);
+	d.emplace_back(90);
+
+	/*for (auto& i : d)
+		cout << i << endl;*/
+	for (auto i = d.begin(); i < d.end(); ++i)
+		cout << *i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:16:21 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+	// sizeof(d)는 40바이트
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+	d.emplace_back(40);
+	d.emplace_back(50);
+	d.emplace_back(60);
+	d.emplace_back(70);
+	d.emplace_back(80);
+	d.emplace_back(90);
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+	d.emplace_back(40);
+	d.emplace_back(50);
+	d.emplace_back(60);
+	d.emplace_back(70);
+	d.emplace_back(80);
+	d.emplace_back(90);
+	// 넣은 값들의 메모리 주소는 vector와 달리 붙어있지 않음
+
+	/*for (auto& i : d)
+		cout << i << endl;*/
+	for (auto i = d.begin(); i < d.end(); ++i)
+		cout << *i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/
+
+==================
+Fri Apr  5 15:17:10 2019
+
+==================
+// =========================================================
+//	2장 순차 컨테이너
+//   array
+//   vector			STL 대표 선수
+// - deque			
+// - list
+// - forward_list
+//
+// 반복자 어댑터 설명이 필요하다
+// ==========================================================
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// "소스.cpp"에서 e를 제거한 결과를 "e없는소스.cpp"에 저장하라
+// remove_if 로 e를 제거한다
+// 공백까지 처리하기 위해 istreambuf_iterator, ostreambuf_iterator를 사용
+
+// "소스.cpp"를 거꾸로 기록한 "거꾸로소스.cpp"에 저장하라
+
+// 입력 : 소스.cpp
+// 출력 : 단어역순.cpp
+// 단어의 글자를 역순으로
+
+
+// "덱"의 앞쪽에 String자료형 10, 20, 30을 넣고 출력해보시오
+int main()
+{
+	/*ifstream in("main.cpp");
+	if (!in)
+		return 1;
+
+	vector<char> v{ istreambuf_iterator<char>(in), istreambuf_iterator<char>() };
+	auto p = remove_if(v.begin(), v.end(), [](const char e) {
+		return e == 'e';
+	});
+	v.erase(p, v.end());
+
+	ofstream out("e없는소스.cpp");
+	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+
+	out.close();
+	in.close();*/
+
+	deque<String> d;
+	// sizeof(d)는 40바이트
+
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+	d.emplace_back(40);
+	d.emplace_back(50);
+	d.emplace_back(60);
+	d.emplace_back(70);
+	d.emplace_back(80);
+	d.emplace_back(90);
+	d.emplace_back(10);
+	d.emplace_back(20);
+	d.emplace_back(30);
+	d.emplace_back(40);
+	d.emplace_back(50);
+	d.emplace_back(60);
+	d.emplace_back(70);
+	d.emplace_back(80);
+	d.emplace_back(90);
+	// 넣은 값들의 메모리 주소는 vector와 달리 붙어있지 않음
+	// 메모리를 한블록씩 여러개를 이어붙인 형식
+
+	/*for (auto& i : d)
+		cout << i << endl;*/
+	for (auto i = d.begin(); i < d.end(); ++i)
+		cout << *i << endl;
+
+	save("main.cpp");
+}
+
+/*vector<String> v;
+v.reserve(10);
+
+v.emplace_back(10);
+v.emplace_back(20);
+v.emplace_back(30);
+
+cout << "--------------------------" << endl << endl << endl;
+// 중간에 길이가 20인 String을 추가하자. 메모리는 어떻게 사용될까?
+// v.emplace(v.begin() + 1, 20);
+
+// 길이가 20인 String을 삭제하라. 메모리는 어떻게 바뀔까?
+// v.erase();
+// vector는 자료를 담는 자료구조이므로 메모리를 관리하는데에 치중하고
+// 알고리즘은 다른곳에서 다룬다
+// auto p = remove(v.begin(), v.end(), 20);
+//		== remove(v.begin(), v.end(), String(20))
+//					어디부터 어디까지 무엇을
+
+// 20은 지워졌으나 v의 사이즈는 줄어들지 않았음
+// 자신의 size값을 변경해주는 것은 자기 자신만 가능하도록
+// 따라서 remove()에는 return값이 존재해서 자료구조에게 알려줄 수 있음
+// v.erase(p, v.end());
+
+// 즉
+// erase-remove idiom
+v.erase(remove(v.begin(), v.end(), String(20)), v.end());
+// 객체가 래퍼런스로 넘어갔기 떄문에 String(20)은 생성이 한번만 되지만
+// 숫자 20으로 넘어갔을경우 객체를 만들어서 계속 비교한다
+
+cout << endl << endl << "--------------------------" << endl;
+
+for (int i = 0; i < v.size(); ++i)
+cout << v[i] << endl;*/

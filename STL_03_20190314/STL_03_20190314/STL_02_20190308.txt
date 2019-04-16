@@ -1,0 +1,3003 @@
+
+
+==================
+Thu Mar 14 13:29:36 2019
+
+==================
+#include <iostream>
+#include "save.h"
+
+int main()
+{
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 13:58:11 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+int a[100'0000];
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	for (int&d : a)
+		d = uid(dre);
+
+	cout << "정렬 전 100개" << endl;
+	for (int i = 0; i < 100; ++i)
+
+		cout << a[i] << " ";
+	cout << endl << endl;
+
+	sort(begin(a), end(a));
+
+	cout << "정렬 후 100개" << endl;
+	for (int i = 0; i < 100; ++i)
+
+		cout << a[i] << " ";
+	cout << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:00:02 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+int a[100'0000];
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	for (int&d : a)
+		d = uid(dre);
+
+	cout << "정렬 전 100개" << endl;
+	for (int i = 0; i < 100; ++i)
+		cout << setw(12) << a[i] << " ";
+	cout << endl << endl;
+
+	sort(begin(a), end(a));
+
+	cout << "정렬 후 100개" << endl;
+	for (int i = 0; i < 100; ++i)
+		cout << setw(12) << a[i] << " ";
+	cout << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:01:06 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+int a[100'0000];
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	for (int&d : a)
+		d = uid(dre);
+
+	cout << "정렬 전 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 0)
+			cout << endl;
+	}
+	cout << endl << endl;
+
+	sort(begin(a), end(a));
+
+	cout << "정렬 후 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 0)
+			cout << endl;
+	}
+	cout << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:01:24 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+int a[100'0000];
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	for (int&d : a)
+		d = uid(dre);
+
+	cout << "정렬 전 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 0 && i > 0)
+			cout << endl;
+	}
+	cout << endl << endl;
+
+	sort(begin(a), end(a));
+
+	cout << "정렬 후 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 0 && i > 0)
+			cout << endl;
+	}
+	cout << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:02:38 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+int a[100'0000];
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	for (int&d : a)
+		d = uid(dre);
+
+	cout << "정렬 전 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 5)
+			cout << endl;
+	}
+	cout << endl << endl;
+
+	sort(begin(a), end(a));
+
+	cout << "정렬 후 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 5)
+			cout << endl;
+	}
+	cout << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:10:18 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// int a[100'0000];
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+
+int main()
+{
+	int num;
+	cout << "원하는 정수의 갯수를 입력하세요 : ";
+	cin >> num;
+
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int* a = new int[num];
+
+	for (int i = 0; i < num; ++i)
+		a[i] = uid(dre);
+
+	cout << "정렬 전 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 5)
+			cout << endl;
+	}
+	cout << endl << endl;
+
+	sort(a, a+num);
+
+	cout << "정렬 후 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 5)
+			cout << endl;
+	}
+	cout << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:10:22 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// int a[100'0000];
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+
+int main()
+{
+	int num;
+	cout << "원하는 정수의 갯수를 입력하세요 : ";
+	cin >> num;
+
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int* a = new int[num];
+
+	for (int i = 0; i < num; ++i)
+		a[i] = uid(dre);
+
+	cout << "정렬 전 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 5)
+			cout << endl;
+	}
+	cout << endl << endl;
+
+	sort(a, a+num);
+
+	cout << "정렬 후 100개" << endl;
+	for (int i = 0; i < 100; ++i) 
+	{
+		cout << setw(12) << a[i] << " ";
+		if (i % 6 == 5)
+			cout << endl;
+	}
+	cout << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:43:07 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int a[10000]{ 0 };
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::app);
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << endl;
+	}
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:43:34 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int a[10000]{ 0 };
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::app);
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << endl;
+		cout << a[i] << endl;
+	}
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:43:50 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int a[10000]{ 0 };
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::app);
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << endl;
+		cout << a[i] << endl;
+	}
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:44:03 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int a[10000]{ 0 };
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::app);
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << endl;
+	}
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:46:39 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::app);
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << endl;
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:47:19 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::app);
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << endl;
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:47:46 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::app);
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i];
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:50:29 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat");
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i];
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:50:31 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat");
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i];
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:50:56 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat");
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << ' ';
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:51:09 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat");
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << " ";
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:51:35 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat");
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << " ";
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:52:25 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat");
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << "\n";
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 14:52:33 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int *a = new int[10000];
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat");
+	for (int i = 0; i < 10000; ++i)
+	{
+		out << a[i] << endl;
+	}
+	delete[] a;
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:02:40 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	int *a = new int[10000]; // int : 4바이트
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat");
+
+	//write(const char* _Str, streamsize Count);
+	//char* 변수가 필요하여 int* -> char*로 변환
+	//out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	// 저 수준 입출력
+
+	out.write((char *)a, 10000 * sizeof(int));
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	out << a[i] << " "; 십진수로 변환하는 과정에서 메모리크기가 늘어나게됨
+	//} 103kb소모
+
+	delete[] a;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:07:44 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	int *a = new int[10000]; // int : 4바이트
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	//ofstream out("정수만개.dat");
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	//} 103kb소모
+
+	//write(const char* _Str, streamsize Count);
+	//char* 변수가 필요하여 int* -> char*로 변환
+	//out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	// 저 수준 입출력
+
+	out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	delete[] a;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:11:26 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	//default_random_engine dre;
+	//uniform_int_distribution<> uid;
+
+	//// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	//int *a = new int[10000]; // int : 4바이트
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	a[i] = uid(dre);
+	//}
+
+	//sort(a, a + 10000);
+
+	//ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	////ofstream out("정수만개.dat");
+
+	////for (int i = 0; i < 10000; ++i)
+	////{
+	////	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	////} 103kb소모
+
+	////write(const char* _Str, streamsize Count);
+	////char* 변수가 필요하여 int* -> char*로 변환
+	////out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	//// 저 수준 입출력
+
+	//out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	//delete[] a;
+	
+	ifstream in("정수만개", ios::binary);
+	if (!in) // 이름이 잘못됬을 경우
+	{
+		return;
+	}
+
+	for (int &d : in)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:11:34 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	//default_random_engine dre;
+	//uniform_int_distribution<> uid;
+
+	//// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	//int *a = new int[10000]; // int : 4바이트
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	a[i] = uid(dre);
+	//}
+
+	//sort(a, a + 10000);
+
+	//ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	////ofstream out("정수만개.dat");
+
+	////for (int i = 0; i < 10000; ++i)
+	////{
+	////	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	////} 103kb소모
+
+	////write(const char* _Str, streamsize Count);
+	////char* 변수가 필요하여 int* -> char*로 변환
+	////out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	//// 저 수준 입출력
+
+	//out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	//delete[] a;
+	
+	ifstream in("정수만개", ios::binary);
+	if (!in) // 이름이 잘못됬을 경우
+	{
+		return;
+	}
+
+	for (int &d : (int)in)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:14:32 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	//default_random_engine dre;
+	//uniform_int_distribution<> uid;
+
+	//// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	//int *a = new int[10000]; // int : 4바이트
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	a[i] = uid(dre);
+	//}
+
+	//sort(a, a + 10000);
+
+	//ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	////ofstream out("정수만개.dat");
+
+	////for (int i = 0; i < 10000; ++i)
+	////{
+	////	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	////} 103kb소모
+
+	////write(const char* _Str, streamsize Count);
+	////char* 변수가 필요하여 int* -> char*로 변환
+	////out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	//// 저 수준 입출력
+
+	//out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	//delete[] a;
+	
+	int *a = new int[10000];
+	ifstream in("정수만개", ios::binary);
+	if (!in)
+	{
+		return;
+	}
+
+	while (!in.eof())
+	{
+		in.getline((char *)a, 10000);
+		cout << a << endl;
+	}
+	in.close();
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:14:48 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	//default_random_engine dre;
+	//uniform_int_distribution<> uid;
+
+	//// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	//int *a = new int[10000]; // int : 4바이트
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	a[i] = uid(dre);
+	//}
+
+	//sort(a, a + 10000);
+
+	//ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	////ofstream out("정수만개.dat");
+
+	////for (int i = 0; i < 10000; ++i)
+	////{
+	////	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	////} 103kb소모
+
+	////write(const char* _Str, streamsize Count);
+	////char* 변수가 필요하여 int* -> char*로 변환
+	////out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	//// 저 수준 입출력
+
+	//out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	//delete[] a;
+	
+	int *a = new int[10000];
+	ifstream in("정수만개.dat", ios::binary);
+	if (!in)
+	{
+		return;
+	}
+
+	while (!in.eof())
+	{
+		in.getline((char *)a, 10000);
+		cout << a << endl;
+	}
+	in.close();
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:15:01 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	//default_random_engine dre;
+	//uniform_int_distribution<> uid;
+
+	//// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	//int *a = new int[10000]; // int : 4바이트
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	a[i] = uid(dre);
+	//}
+
+	//sort(a, a + 10000);
+
+	//ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	////ofstream out("정수만개.dat");
+
+	////for (int i = 0; i < 10000; ++i)
+	////{
+	////	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	////} 103kb소모
+
+	////write(const char* _Str, streamsize Count);
+	////char* 변수가 필요하여 int* -> char*로 변환
+	////out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	//// 저 수준 입출력
+
+	//out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	//delete[] a;
+	
+	int *a = new int[10000];
+	ifstream in("정수만개.dat", ios::binary);
+
+	while (!in.eof())
+	{
+		in.getline((char *)a, 10000);
+		cout << a << endl;
+	}
+	in.close();
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:15:17 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	//default_random_engine dre;
+	//uniform_int_distribution<> uid;
+
+	//// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	//int *a = new int[10000]; // int : 4바이트
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	a[i] = uid(dre);
+	//}
+
+	//sort(a, a + 10000);
+
+	//ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	////ofstream out("정수만개.dat");
+
+	////for (int i = 0; i < 10000; ++i)
+	////{
+	////	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	////} 103kb소모
+
+	////write(const char* _Str, streamsize Count);
+	////char* 변수가 필요하여 int* -> char*로 변환
+	////out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	//// 저 수준 입출력
+
+	//out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	//delete[] a;
+	
+	int *a = new int[10000];
+	ifstream in("정수만개.dat", ios::binary);
+
+	while (!in.eof())
+	{
+		in.getline((char *)a, 10000);
+		cout << (int)a << endl;
+	}
+	in.close();
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:15:33 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	//default_random_engine dre;
+	//uniform_int_distribution<> uid;
+
+	//// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	//int *a = new int[10000]; // int : 4바이트
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	a[i] = uid(dre);
+	//}
+
+	//sort(a, a + 10000);
+
+	//ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	////ofstream out("정수만개.dat");
+
+	////for (int i = 0; i < 10000; ++i)
+	////{
+	////	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	////} 103kb소모
+
+	////write(const char* _Str, streamsize Count);
+	////char* 변수가 필요하여 int* -> char*로 변환
+	////out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	//// 저 수준 입출력
+
+	//out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	//delete[] a;
+	
+	int *a = new int[10000];
+	ifstream in("정수만개.dat");
+
+	while (!in.eof())
+	{
+		in.getline((char *)a, 10000);
+		cout << a << endl;
+	}
+	in.close();
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:18:54 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	int *a = new int[10000]; // int : 4바이트
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	//ofstream out("정수만개.dat");
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	//} 103kb소모
+
+	//write(const char* _Str, streamsize Count);
+	//char* 변수가 필요하여 int* -> char*로 변환
+	//out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	// 저 수준 입출력
+
+	out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	delete[] a;
+	
+	ifstream in("정수만개.dat", ios::binary);
+
+	int* d = NULL;
+	for (int i = 0; i < 10000; ++i)
+	{
+		in.read((char *)&d, sizeof(int));
+		cout << d << endl;
+	}
+	in.close();
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:19:05 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	int *a = new int[10000]; // int : 4바이트
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	//ofstream out("정수만개.dat");
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	//} 103kb소모
+
+	//write(const char* _Str, streamsize Count);
+	//char* 변수가 필요하여 int* -> char*로 변환
+	//out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	// 저 수준 입출력
+
+	out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	delete[] a;
+	
+	ifstream in("정수만개.dat", ios::binary);
+
+	int d;
+	for (int i = 0; i < 10000; ++i)
+	{
+		in.read((char *)&d, sizeof(int));
+		cout << d << endl;
+	}
+	in.close();
+
+	save("main.cpp");
+}
+
+==================
+Thu Mar 14 15:19:20 2019
+
+==================
+// 파일을 읽고 쓰기
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+//#include <iomanip> // 줄맞춤
+#include "save.h"
+using namespace std;
+
+// 전역 데이터는 실행파일의(어디에)(어떻게) 기록되는가?
+// -> 프로그램이 시작될 때부터 끝날 때까지 메모리에 데이터크기만큼 추가된다.
+// int a[100];
+// int a[100]{ 1 };
+// 위 두 방식의 차이점을 설명해 보자
+
+// 사용자가 원하는 만큼 정수를 입력받는다.
+// 임의의 값으로 채운다, uid(dre)이용
+// 오름차순 정렬 후 100개 출력
+//while (true)
+//{
+//	int num;
+//	cout << "원하는 정수의 갯수를 입력하세요 : ";
+//	cin >> num;
+
+//	default_random_engine dre;
+//	uniform_int_distribution<> uid;
+
+//	int* a = new int[num]; // 동적배열 선언 new[]
+
+//	for (int i = 0; i < num; ++i)
+//		a[i] = uid(dre);
+
+//	cout << "정렬 전 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	sort(a, a + num);
+
+//	cout << "정렬 후 100개" << endl;
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		cout << setw(12) << a[i] << " ";
+//		if (i % 6 == 5)
+//			cout << endl;
+//	}
+//	cout << endl << endl;
+
+//	delete[] a; // 동적배열 해제
+//}
+
+
+
+
+// 정수 10000개를 생성하고 랜덤값을 설정하고 정렬한 후
+// 파일 "정수만개.dat"에 기록하라
+// 정수만개를 기록하려면 몇 바이트가 필요한가?
+// 40000byte가 필요하다.
+// 파일을 default text모드 말고 binary모드로 열어야 한다.
+// - binary모드가 무엇인가? (Windows, Apple, Unix) 각각 다름
+
+
+// 파일 "정수만개.dat"에는 정수 만개가 오름차순으로 정렬되어있다.
+// 이 파일은 binary모드로 기록되어 있다.
+// [문제] 읽어서 화면에 출력하라
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	// 0번쨰 원소의 시작번지부터, 모두 10000개 * sizeof(int);
+	int *a = new int[10000]; // int : 4바이트
+
+	for (int i = 0; i < 10000; ++i)
+	{
+		a[i] = uid(dre);
+	}
+
+	sort(a, a + 10000);
+
+	ofstream out("정수만개.dat", ios::binary); // binary 모드로 열기
+	//ofstream out("정수만개.dat");
+
+	//for (int i = 0; i < 10000; ++i)
+	//{
+	//	out << a[i] << " "; 십진수로 표현하는 과정에서 메모리크기가 늘어나게됨
+	//} 103kb소모
+
+	//write(const char* _Str, streamsize Count);
+	//char* 변수가 필요하여 int* -> char*로 변환
+	//out.write(const_cast<const char*>(reinterpret_cast<char*>(a)), 10000 * sizeof(int)); 
+	// 저 수준 입출력
+
+	out.write((char *)a, 10000 * sizeof(int)); // 40.185byte소모 185byte낭비
+
+	delete[] a;
+	
+	ifstream in("정수만개.dat", ios::binary);
+
+	int d;
+	for (int i = 0; i < 10000; ++i)
+	{
+		in.read((char *)&d, sizeof(int));
+		cout << d << endl;
+	}
+	in.close();
+
+	save("main.cpp");
+}
