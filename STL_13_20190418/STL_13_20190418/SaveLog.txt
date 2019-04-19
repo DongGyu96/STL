@@ -1,0 +1,3815 @@
+
+
+==================
+Thu Apr 18 13:37:56 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+void print(vector<String>::iterator start, vector<String>::iterator end);
+
+int main()
+{
+	vector<String> data{ 1,2,3,4,5 };
+
+	print(data.begin(), data.end());
+
+	save("main.cpp");
+}
+
+void print(vector<String>::iterator start, vector<String>::iterator end)
+{
+	while (start != end)
+		cout << *start++ << endl;
+}
+
+==================
+Thu Apr 18 13:41:48 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+void print(vector<String>::iterator start, vector<String>::iterator end);
+void print(vector<int>::iterator start, vector<int>::iterator end);
+
+int main()
+{
+	vector<String> data{ 1,2,3,4,5 };
+
+	print(data.begin(), data.end());
+
+	save("main.cpp");
+}
+
+void print(vector<String>::iterator start, vector<String>::iterator end)
+{
+	while (start != end)
+		cout << *start++ << endl;
+	for (; start != end; start++)
+		cout << *start << endl;
+}
+
+void print(vector<int>::iterator start, vector<int>::iterator end)
+{
+	while (start != end)
+		cout << *start++ << endl;
+}
+
+==================
+Thu Apr 18 13:41:55 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+void print(vector<String>::iterator start, vector<String>::iterator end);
+void print(vector<int>::iterator start, vector<int>::iterator end);
+
+int main()
+{
+	vector<String> data{ 1,2,3,4,5 };
+
+	print(data.begin(), data.end());
+
+	save("main.cpp");
+}
+
+void print(vector<String>::iterator start, vector<String>::iterator end)
+{
+	/*while (start != end)
+		cout << *start++ << endl;*/
+	for (; start != end; start++)
+		cout << *start << endl;
+}
+
+void print(vector<int>::iterator start, vector<int>::iterator end)
+{
+	while (start != end)
+		cout << *start++ << endl;
+}
+
+==================
+Thu Apr 18 13:42:14 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+void print(vector<String>::iterator start, vector<String>::iterator end);
+void print(vector<int>::iterator start, vector<int>::iterator end);
+
+int main()
+{
+	vector<int> data{ 1,2,3,4,5 };
+
+	print(data.begin(), data.end());
+
+	save("main.cpp");
+}
+
+void print(vector<String>::iterator start, vector<String>::iterator end)
+{
+	while (start != end)
+		cout << *start++ << endl;
+	//for (; start != end; start++)
+	//	cout << *start << endl;
+}
+
+void print(vector<int>::iterator start, vector<int>::iterator end)
+{
+	while (start != end)
+		cout << *start++ << endl;
+}
+
+==================
+Thu Apr 18 13:46:53 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T>
+void print(T a, T b);
+
+int main()
+{
+	vector<int> data{ 1,2,3,4,5 };
+
+	print(data.begin(), data.end());
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (start != end)
+		cout << *start++ << endl;
+	//for (; start != end; ++start)
+	//	cout << *start << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//}
+
+==================
+Thu Apr 18 13:46:59 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T>
+void print(T a, T b);
+
+int main()
+{
+	vector<int> data{ 1,2,3,4,5 };
+
+	print(data.begin(), data.end());
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (start != end)
+		cout << *start++ << endl;
+	//for (; start != end; ++start)
+	//	cout << *start << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//}
+
+==================
+Thu Apr 18 13:47:21 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T>
+void print(T a, T b);
+
+int main()
+{
+	vector<int> data{ 1,2,3,4,5 };
+
+	print(data.begin(), data.end());
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+	//for (; start != end; ++start)
+	//	cout << *start << endl;
+}
+
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//}
+
+==================
+Thu Apr 18 13:55:27 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	cout << add(1, 2) << endl;
+	cout << add("Hello, ", "World!") << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	return a + b;
+}
+
+==================
+Thu Apr 18 13:56:02 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	cout << add(1, 2) << endl;
+	cout << add("Hello, ", "World!") << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	T result = a + b;
+	return result;
+}
+
+==================
+Thu Apr 18 13:57:16 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	cout << add(1, 2) << endl;
+	cout << add("Hello, ", "World!") << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	try :
+		T result = a + b;
+	else
+		string result = a + b;
+	return result;
+}
+
+==================
+Thu Apr 18 13:57:27 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	cout << add(1, 2) << endl;
+	cout << add("Hello, ", "World!") << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	try
+		T result = a + b;
+	else
+		string result = a + b;
+	return result;
+}
+
+==================
+Thu Apr 18 13:59:00 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include <string>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	cout << add(1, 2) << endl;
+	cout << add<string>("Hello, ", "World!") << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	return a + b;
+}
+
+==================
+Thu Apr 18 14:01:04 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include <string>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	cout << add(1, 2) << endl;
+	cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	if (is_arithmetic<T>())
+		return a + b;
+	else
+		return string(a) + string(b);
+}
+
+==================
+Thu Apr 18 14:01:55 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include <string>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	cout << add(1, 2) << endl;
+	cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	if (is_arithmetic<T>())
+		return a + b;
+	else
+		return a;
+}
+
+==================
+Thu Apr 18 14:02:00 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include <string>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	cout << add(1, 2) << endl;
+	cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	if (is_arithmetic<T>())
+		return a + b;
+	else
+		return a;
+}
+
+==================
+Thu Apr 18 14:02:07 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include <string>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	cout << add(1, 2) << endl;
+	cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	if (is_arithmetic<T>())
+		return a + b;
+	else
+		return a;
+}
+
+==================
+Thu Apr 18 14:12:51 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <vector>
+#include <string>
+#include <iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+template <class T>
+void f(T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	vector<int> v{ 1,2,3 };
+	f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+}
+
+==================
+Thu Apr 18 14:16:16 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+template <class T>
+void f(T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	vector<int> v{ 1,2,3 };
+
+	f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	f(list<int>::const_iterator());
+	f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	f(ostream_iterator<int>(clog));
+	f(istream_iterator<int>());
+	
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+}
+
+==================
+Thu Apr 18 14:17:25 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+template <class T>
+void f(const T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	vector<int> v{ 1,2,3 };
+
+	f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	f(list<int>::const_iterator());
+	f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	f(ostream_iterator<int>(clog));
+	f(istream_iterator<int>());
+	
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+}
+
+==================
+Thu Apr 18 14:18:13 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+
+template <class T>
+T add(T, T);
+
+template <class T>
+void f(const T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	vector<int> v{ 1,2,3 };
+
+	f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	f(list<int>::const_iterator());
+	f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	f(ostream_iterator<int>(clog));
+	f(istream_iterator<int>());
+	
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+==================
+Thu Apr 18 14:33:43 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+class MyIter {
+
+};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	f(MyIter());
+	
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+==================
+Thu Apr 18 14:36:04 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자
+class MyIter {
+
+};
+template <>
+struct iterator_traits<MyIter> {
+	typedef random_access_iterator_tag iterator_category;
+};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	f(MyIter());
+	
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+==================
+Thu Apr 18 14:36:32 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자
+class MyIter {
+
+};
+template <>
+struct iterator_traits<MyIter> {
+	typedef random_access_iterator_tag iterator_category;
+};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	f(MyIter());
+	
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	//cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+==================
+Thu Apr 18 14:37:24 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자
+class MyIter {
+
+};
+
+// 특성을 등록해야 한다
+template <>
+struct iterator_traits<MyIter> {
+	using iterator_category = random_access_iterator_tag;
+};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	f(MyIter());
+	
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+==================
+Thu Apr 18 14:46:38 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<String> v{ 1,2,3,4,5 };
+
+	copy(v.begin(), v.end(), ostream_iterator<String>(cout));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+==================
+Thu Apr 18 14:46:54 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<String> v{ 1,2,3,4,5 };
+
+	copy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+==================
+Thu Apr 18 14:51:08 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class T>
+void myCopy(T, T, ostream_iterator<iterator_traits<T>::value_type>);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<String> v{ 1,2,3,4,5 };
+
+	//copy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class T>
+void myCopy(T a, T b, ostream_iterator<iterator_traits<T>::value_type> c)
+{
+	copy(a, b, c(cout, "\n"));
+}
+
+==================
+Thu Apr 18 14:52:25 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class T>
+void myCopy(T, T, ostream_iterator<iterator_traits<T>::value_type>());
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<String> v{ 1,2,3,4,5 };
+
+	//copy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class T>
+void myCopy(T a, T b, ostream_iterator<iterator_traits<T>::value_type> c)
+{
+	copy(a, b, c(cout, "\n"));
+}
+
+==================
+Thu Apr 18 14:53:08 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class T>
+void myCopy(T, T, ostream_iterator<iterator_traits<T>::value_type>());
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<String> v{ 1,2,3,4,5 };
+
+	//copy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class T>
+void myCopy(T a, T b, ostream_iterator<iterator_traits<T>::value_type> c())
+{
+	copy(a, b, c);
+}
+
+==================
+Thu Apr 18 14:55:31 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<String> v{ 1,2,3,4,5 };
+
+	//copy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	copy(begin, end, des);
+}
+
+==================
+Thu Apr 18 14:56:59 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<String> v{ 1,2,3,4,5 };
+
+	myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ *begin++;
+}
+
+==================
+Thu Apr 18 14:57:22 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<String> v{ 1,2,3,4,5 };
+
+	myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 14:57:29 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<String> v{ 1,2,3,4,5 };
+
+	myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:05:41 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	w.reserve(6);
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), w.begin());
+	//myCopy(w.begin(), w.end(), ostream_iterator<String>(cout, "\n"));
+
+	for (auto&d : w)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:06:48 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	w.reserve(5);
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), w.begin());
+	//myCopy(w.begin(), w.end(), ostream_iterator<String>(cout, "\n"));
+
+	for (auto&d : w)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:08:05 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	w.resize(5);
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), w.begin());
+	//myCopy(w.begin(), w.end(), ostream_iterator<String>(cout, "\n"));
+
+	for (auto&d : w)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:09:17 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	w.resize(5); // reserve는 공간만 할당하는 것
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), w.begin());
+	myCopy(w.begin(), w.end(), ostream_iterator<String>(cout, "\n"));
+
+	for (auto&d : w)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:09:28 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	w.resize(5); // reserve는 공간만 할당하는 것
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), w.begin());
+	myCopy(w.begin(), w.end(), ostream_iterator<int>(cout, "\n"));
+
+	for (auto&d : w)
+		cout << d << endl;
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:10:13 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	w.resize(5); // reserve는 공간만 할당하는 것 size는 0이기 때문에 복사가 불가능함
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), w.begin());
+	myCopy(w.begin(), w.end(), ostream_iterator<int>(cout, "\n"));
+	myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:10:19 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	w.resize(5); // reserve는 공간만 할당하는 것 size는 0이기 때문에 복사가 불가능함
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), w.begin());
+	myCopy(w.begin(), w.end(), ostream_iterator<int>(cout, "\n"));
+	myCopy(v.begin(), v.end(), ostream_iterator<int>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:10:28 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	w.resize(5); // reserve는 공간만 할당하는 것 size는 0이기 때문에 복사가 불가능함
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), w.begin());
+	myCopy(w.begin(), w.end(), ostream_iterator<int>(cout, "\n"));
+	myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:16:17 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	//w.resize(5);
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), back_inserter(w));
+							  // iterator adaptor
+	myCopy(w.begin(), w.end(), ostream_iterator<int>(cout, "\n"));
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
+
+==================
+Thu Apr 18 15:18:16 2019
+
+==================
+// ====================================================
+// 4월 26일 중간고사
+//
+// 반복자
+// 반복자를 이용한 프로그램
+// 반복자의 특성
+// 반복자 어댑터
+//		1. 삽입반복자
+//		2. 역방향반복자
+//		3. 스트림반복자
+//		4. 이동반복자
+// ====================================================
+#include <iostream>
+#include <list>
+#include <forward_list>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include "String.h"
+#include "save.h"
+using namespace std;
+
+// 사용자 정의 반복자 반드시 클래스여야 한다
+class MyIter : public iterator<bidirectional_iterator_tag, int> {
+	// *, ++ 동작이 가능해야함 ( 랜덤 반복자는 * / - 다 할 수 있어야 함 )
+
+};
+// 특성을 등록해야 한다 -> 상속을 받는 방법이 있음
+//template <>
+//struct iterator_traits<MyIter> {
+//	using iterator_category = random_access_iterator_tag;
+//};
+
+
+//void print(vector<int>::iterator start, vector<int>::iterator end);
+template <class T> // Generic Programming의 핵심 / 타입에 상관없이 작동한다
+void print(T a, T b);
+
+template <class T>
+T add(T, T);
+
+// 템플릿의 인자는 자료형인데 그 자료형의 특성을 알아볼 방법은 없는가
+template <class T>
+void f(const T);
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des);
+
+int main()
+{
+	//vector<int> data{ 1,2,3,4,5 };
+	//print(data.begin(), data.end());
+
+	//cout << add(1, 2) << endl;
+	//cout << add("Hello, ", "World!") << endl;
+	//add<string>("Hello, ", "World!")
+
+	//vector<int> v{ 1,2,3 };
+	//f(v.begin()); // 화면에 인자로 전달된 반복자의 종류를 출력한다
+	//f(list<String>::const_iterator());
+	//f(forward_list<int>::const_iterator()); // 값을 읽기만 할때
+	//f(ostream_iterator<int>(clog));
+	//f(istream_iterator<int>());
+	//f(MyIter());
+	
+	vector<int> v{ 1,2,3,4,5 };
+	vector<int> w;
+	//w.resize(5);
+
+	//myCopy(v.begin(), v.end(), ostream_iterator<String>(cout, "\n"));
+	myCopy(v.begin(), v.end(), back_inserter(w));
+							  // iterator adaptor
+
+	for (auto i = v.rbegin(); i < v.rend(); ++i)
+	{
+		cout << *i << endl;
+	}
+
+	save("main.cpp");
+}
+
+template <class T>
+void print(T a, T b)
+{
+	while (a != b)
+		cout << *a++ << endl;
+}
+//void print(vector<int>::iterator start, vector<int>::iterator end)
+//{
+//	while (start != end)
+//		cout << *start++ << endl;
+//	for (; start != end; ++start)
+//		cout << *start << endl;
+//}
+
+template <class T>
+T add(T a, T b)
+{
+	// type_traits 타입 특성
+	cout << boolalpha << is_arithmetic<T>() << endl;
+	// SFINAE : 템플릿으로 치환하다가 실패하더라도 에러로 취급하지 말 것
+	return a + b;
+}
+
+template <class T>
+void f(const T iter)
+{
+	// T가 어떤 종류의 반복자인가?
+	cout<< typeid(iterator_traits<T>::iterator_category).name() << endl;
+
+	// T가 어떤 자료형을 가르키고 있는가?
+	cout << typeid(iterator_traits<T>::value_type).name() << endl;
+}
+
+template <class InIter, class OutIter>
+void myCopy(InIter begin, InIter end, OutIter des)
+{
+	//copy(begin, end, des);
+	while (begin != end)
+		*des++ = *begin++;
+}
